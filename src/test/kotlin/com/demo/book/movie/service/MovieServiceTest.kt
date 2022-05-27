@@ -28,7 +28,7 @@ class MovieServiceTest : StringSpec() {
 
     init {
 
-        "Adding a movie with length 5 minutes" {
+        "Should add movie when the length is 5 minutes" {
             val movieRequest = MovieRequest("test", 1653586200000, 1653586500000)
             val expected = Movie(1, "test", LocalDateTime.ofEpochSecond(1653579000000,0, ZoneOffset.UTC), LocalDateTime.ofEpochSecond(1653586200000, 0, ZoneOffset.UTC))
             every { MovieService(mockMovieRepository).save(movieRequest) } returns expected
